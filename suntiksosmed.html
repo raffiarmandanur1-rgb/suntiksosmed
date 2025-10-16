@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Suntik Sosmed TikTok — Gold Black Luxury + Auto Calculator</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body {
+      background: radial-gradient(circle at top, #1a1a1a 0%, #000 100%);
+      color: #f5f5f5;
+    }
+    .gold-text {
+      background: linear-gradient(90deg, #FFD700, #E6BE8A, #FFF2B2);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    }
+    .gold-glow {
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+      border: 1px solid rgba(255, 215, 0, 0.4);
+    }
+    .card {
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+  </style>
+</head>
+<body class="overflow-x-hidden font-sans">
+
+  <!-- HEADER -->
+  <header class="text-center py-12" data-aos="fade-down">
+    <h1 class="text-5xl md:text-6xl font-bold gold-text">Suntik Sosmed TikTok</h1>
+    <p class="text-gray-300 mt-3 text-lg">Layanan Premium dengan Desain Mewah dan Kalkulator Otomatis ✨</p>
+  </header>
+
+  <!-- PRODUK -->
+  <main class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 px-6 pb-20">
+    <!-- LIKE -->
+    <div data-aos="fade-right" class="card bg-gradient-to-br from-gray-900 to-black p-6 rounded-3xl gold-glow">
+      <h2 class="text-3xl font-semibold mb-3 gold-text">❤️ Like TikTok</h2>
+      <p class="text-gray-300 mb-4">Tingkatkan engagement video dengan ribuan like cepat!</p>
+      <div class="text-4xl font-bold mb-4 text-yellow-400">Rp 2.000</div>
+      <p class="text-sm text-gray-400 mb-6">per 1.000 Like</p>
+      <button onclick="selectService('Like TikTok', 2000)"
+        class="w-full bg-yellow-500/20 border border-yellow-400 text-yellow-300 font-semibold py-2 rounded-xl hover:bg-yellow-500 hover:text-black transition">
+        Pesan Sekarang
+      </button>
+    </div>
+
+    <!-- VIEWS -->
+    <div data-aos="zoom-in" class="card bg-gradient-to-br from-gray-900 to-black p-6 rounded-3xl gold-glow">
+      <h2 class="text-3xl font-semibold mb-3 gold-text">👁️ Views TikTok</h2>
+      <p class="text-gray-300 mb-4">Buat video kamu cepat viral dengan views melimpah.</p>
+      <div class="text-4xl font-bold mb-4 text-yellow-400">Rp 500</div>
+      <p class="text-sm text-gray-400 mb-6">per 1.000 Views</p>
+      <button onclick="selectService('Views TikTok', 500)"
+        class="w-full bg-yellow-500/20 border border-yellow-400 text-yellow-300 font-semibold py-2 rounded-xl hover:bg-yellow-500 hover:text-black transition">
+        Pesan Sekarang
+      </button>
+    </div>
+
+    <!-- FOLLOWERS -->
+    <div data-aos="fade-left" class="card bg-gradient-to-br from-gray-900 to-black p-6 rounded-3xl gold-glow">
+      <h2 class="text-3xl font-semibold mb-3 gold-text">👤 Followers TikTok</h2>
+      <p class="text-gray-300 mb-4">Bangun kredibilitas akunmu dengan followers asli dan cepat.</p>
+      <div class="text-4xl font-bold mb-4 text-yellow-400">Rp 3.000</div>
+      <p class="text-sm text-gray-400 mb-6">per 1.000 Followers</p>
+      <button onclick="selectService('Followers TikTok', 3000)"
+        class="w-full bg-yellow-500/20 border border-yellow-400 text-yellow-300 font-semibold py-2 rounded-xl hover:bg-yellow-500 hover:text-black transition">
+        Pesan Sekarang
+      </button>
+    </div>
+  </main>
+
+  <!-- FORM PEMESANAN -->
+  <section id="orderForm" class="max-w-xl mx-auto bg-gradient-to-b from-gray-900 to-black p-8 rounded-3xl gold-glow hidden"
+           data-aos="zoom-in-up">
+    <h2 class="text-4xl font-semibold mb-6 text-center gold-text">🛒 Form Pemesanan</h2>
+    <form id="formOrder" class="space-y-4">
+      <div>
+        <label class="block text-gray-300 mb-2">Nama Lengkap</label>
+        <input id="name" type="text" required class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-yellow-400 outline-none" placeholder="Masukkan nama kamu">
+      </div>
+      <div>
+        <label class="block text-gray-300 mb-2">Link Akun / Video TikTok</label>
+        <input id="link" type="url" required class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-yellow-400 outline-none" placeholder="https://www.tiktok.com/@username">
+      </div>
+      <div>
+        <label class="block text-gray-300 mb-2">Layanan Dipilih</label>
+        <input id="selectedService" readonly class="w-full px-4 py-2 rounded-lg bg-gray-800 text-yellow-300 font-semibold">
+      </div>
+      <div>
+        <label class="block text-gray-300 mb-2">Jumlah Pesanan</label>
+        <input id="quantity" type="number" min="100" step="100" value="1000"
+          class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-yellow-400 outline-none"
+          placeholder="Masukkan jumlah (misal 5000)">
+      </div>
+      <div>
+        <label class="block text-gray-300 mb-2">Total Harga</label>
+        <input id="totalPrice" readonly class="w-full px-4 py-2 rounded-lg bg-gray-800 text-yellow-300 font-bold">
+      </div>
+      <div>
+        <label class="block text-gray-300 mb-2">Metode Pembayaran</label>
+        <select id="payment" class="w-full px-4 py-2 rounded-lg bg-gray-800 text-white focus:ring-2 focus:ring-yellow-400">
+          <option value="DANA">DANA</option>
+          <option value="QRIS">QRIS</option>
+        </select>
+      </div>
+
+      <div class="bg-gray-800/60 p-4 rounded-lg text-center mt-4 gold-glow">
+        <p class="text-gray-300">Transfer ke:</p>
+        <p class="text-xl font-semibold mt-2 text-yellow-400">DANA: 08xxxxxxxxxx</p>
+        <p class="text-sm text-gray-400 mt-1">Atau scan QRIS di bawah ini:</p>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/QRIS_logo.svg" alt="QRIS" class="mx-auto mt-3 w-32 h-32 bg-white p-2 rounded-lg">
+      </div>
+
+      <button type="submit"
+        class="w-full bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300 py-2 rounded-xl font-semibold text-black mt-6 shadow-lg hover:opacity-90 transition-all">
+        Kirim Pesanan via WhatsApp
+      </button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="text-center text-gray-500 border-t border-gray-700 py-8 mt-20" data-aos="fade-up">
+    <p class="text-sm">© 2025 <span class="text-yellow-400">Suntik Sosmed Pro</span> — All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    const adminNumber = "6281234567890"; // ubah ke nomor WhatsApp kamu
+
+    AOS.init({ once: true, duration: 1000, offset: 100 });
+
+    let currentRate = 0;
+
+    function selectService(service, rate) {
+      currentRate = rate;
+      document.getElementById('orderForm').classList.remove('hidden');
+      document.getElementById('selectedService').value = `${service}`;
+      calculateTotal();
+      window.scrollTo({ top: document.getElementById('orderForm').offsetTop - 50, behavior: 'smooth' });
+    }
+
+    document.getElementById('quantity').addEventListener('input', calculateTotal);
+
+    function calculateTotal() {
+      const qty = document.getElementById('quantity').value || 0;
+      const total = (qty / 1000) * currentRate;
+      document.getElementById('totalPrice').value = "Rp " + total.toLocaleString('id-ID');
+    }
+
+    document.getElementById('formOrder').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const link = document.getElementById('link').value;
+      const service = document.getElementById('selectedService').value;
+      const qty = document.getElementById('quantity').value;
+      const total = document.getElementById('totalPrice').value;
+      const payment = document.getElementById('payment').value;
+
+      const message =
+        `*Form Pemesanan Suntik Sosmed TikTok*\n\n` +
+        `👤 Nama: ${name}\n` +
+        `🔗 Link: ${link}\n` +
+        `💎 Layanan: ${service}\n` +
+        `📦 Jumlah: ${qty}\n` +
+        `💰 Total: ${total}\n` +
+        `💳 Pembayaran: ${payment}\n\n` +
+        `Saya ingin memesan layanan di atas.`;
+
+      const encodedMessage = encodeURIComponent(message);
+      window.open(`https://wa.me/${85755095185}?text=${encodedMessage}`, '_blank');
+    });
+  </script>
+</body>
+</html>
